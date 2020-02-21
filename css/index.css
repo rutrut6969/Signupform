@@ -1,0 +1,104 @@
+@keyframes closebtnanim {
+  from {
+    transform: translateX(0deg);
+  }
+  to {
+    transform: translateX(130deg);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hide {
+  display: none;
+  transition: 0.2s ease;
+}
+.show {
+  display: contents;
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+body {
+  background: darkgray;
+}
+body .overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: darkgray;
+  opacity: 0.7;
+  animation-name: fadein;
+  animation-duration: 2s;
+}
+body .overlay .closebtn {
+  float: right;
+  margin: 10px;
+  margin-top: -100px;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  cursor: pointer;
+}
+body .overlay .closebtn:hover {
+  animation-name: closebtnanim;
+  animation-duration: 3s;
+  color: black;
+  transition: 0.3s ease-in;
+}
+body .overlay .signup {
+  max-width: 350px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 100px;
+  box-shadow: 2px 2px 10px black;
+}
+body .overlay .signup h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  text-align: center;
+}
+body .overlay .signup form {
+  margin-top: 50px;
+}
+body .overlay .signup form input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  border: 1px solid lightgray;
+  font-size: 15px;
+  border-radius: 7px;
+}
+body .overlay .signup form input[type='submit'] {
+  font-size: 16px;
+  background-color: red;
+  color: #fff;
+  padding: 15px;
+}
+body #show {
+  width: 150px;
+  font-size: 16px;
+  border: none;
+  background-color: orange;
+  color: white;
+  margin: 100px;
+  padding: 10px;
+  border-radius: 7px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+body #show:hover {
+  background-color: white;
+  color: orange;
+}

@@ -1,0 +1,126 @@
+// Mix-ins
+.btn-color(@color, @bg-color) {
+  background-color: @bg-color;
+  color: @color;
+}
+
+.flex(@dir:row, @just:center, @ali:center) {
+  display: flex;
+  flex-direction: @dir;
+  justify-content: @just;
+  align-items: @ali;
+}
+
+.btnanim() {
+  animation-name: closebtnanim;
+  animation-duration: 3s;
+}
+
+.fadein(@dir) {
+  animation-name: fadein;
+  animation-duration: @dir;
+}
+// Closes Mix-ins
+
+@keyframes closebtnanim {
+  from {
+    transform: translateX(0deg);
+  }
+  to {
+    transform: translateX(130deg);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hide {
+  display: none;
+  transition: 0.2s ease;
+}
+.show {
+  display: contents;
+  .fadein(2s);
+}
+body {
+  background: darkgray;
+  .overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: darkgray;
+    opacity: 0.7;
+
+    .fadein(2s);
+    .closebtn {
+      float: right;
+      margin: 10px;
+      margin-top: -100px;
+      color: white;
+      font-size: 3em;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover {
+        .btnanim();
+        color: black;
+        transition: 0.3s ease-in;
+      }
+    } // Closes Closebtn
+    .signup {
+      max-width: 350px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      margin-top: 100px;
+      box-shadow: 2px 2px 10px black;
+      h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      form {
+        margin-top: 50px;
+
+        input {
+          width: 100%;
+          padding: 10px;
+          box-sizing: border-box;
+          margin-bottom: 10px;
+          border: none;
+          outline: none;
+          border: 1px solid lightgray;
+          font-size: 15px;
+          border-radius: 7px;
+        } // Closes Input
+        input[type='submit'] {
+          font-size: 16px;
+          .btn-color(#fff, red);
+          padding: 15px;
+        }
+      } // Closes Form
+    } // Closes SignUp
+  } // Closes Overlay
+  #show {
+    width: 150px;
+    font-size: 16px;
+    border: none;
+    .btn-color(white, orange);
+    margin: 100px;
+    padding: 10px;
+    border-radius: 7px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      .btn-color(orange, white);
+    }
+  }
+} // Closes Body
